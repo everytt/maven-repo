@@ -28,6 +28,23 @@
         android:onClick="onRegister"
         android:text="register" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onShowPromo"
+        android:text="show promo" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onShowCharge"
+        android:text="show charge" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onShowEtc"
+        android:text="show etc" />
 
     <Button
         android:layout_width="match_parent"

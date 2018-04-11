@@ -54,6 +54,33 @@ public class MainActivity extends AppCompatActivity {
         GlobalT.getInstance().register(UID);
     }
 
+    public void onShowPromo(View view) {
+        GlobalT.showPromo(this, new GlobalT.Failure() {
+            @Override
+            public void onFail(String s) {
+                Toast.makeText(getApplicationContext(), "Error : " + s, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void onShowCharge(View view) {
+        GlobalT.showCharge(this, new GlobalT.Failure() {
+            @Override
+            public void onFail(String s) {
+                Toast.makeText(getApplicationContext(), "Error : " + s, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void onShowEtc(View view) {
+        GlobalT.showEtc(this, new GlobalT.Failure() {
+            @Override
+            public void onFail(String s) {
+                Toast.makeText(getApplicationContext(), "Error : " + s, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     public void onSendCall(View view) {
         GlobalT.call(this, PHONE_NUMBER, new GlobalT.Failure() {
             @Override
