@@ -7,7 +7,9 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.every.tt.GlobalT;
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String PHONE_NUMBER = "01000000000";
 
     private GlobalTReceiver mGlobalTReceiver = new GlobalTReceiver();
+
+    private TextView mTextUserSerial;
 
     @Override
     protected void onDestroy() {
@@ -32,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        mTextUserSerial = findViewById(R.id.text_user_serial);
 
         registerReceiver();
     }
@@ -108,6 +114,30 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void onUserSerial(View view) {
+        String userSerial = GlobalT.getInstance().userSerial();
+        mTextUserSerial.setText(TextUtils.isEmpty(userSerial) ? "No serial" : userSerial);
+    }
+
+
+    public void onShowChatRoomList(View view) {
+        GlobalT.showChatRoomList(this, new GlobalT.Failure() {
+            @Override
+            public void onFail(String errorMessage) {
+                Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void onCallList(View view) {
+        GlobalT.showRecentCallList(this, new GlobalT.Failure() {
+            @Override
+            public void onFail(String errorMessage) {
+                Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     public void onStop(View view) {
         if (GlobalT.getInstance().isServiceTurnOn()) {
             GlobalT.getInstance().stop();
@@ -125,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
         intentFilter.addAction(GlobalT.ACTION_UPDATE_SMS_LOG);
         registerReceiver(mGlobalTReceiver, intentFilter);
     }
+
 
     private class GlobalTReceiver extends BroadcastReceiver {
 
