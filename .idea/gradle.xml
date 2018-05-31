@@ -8,9 +8,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/libGlobalTT_v0.1.0" />
             <option value="$PROJECT_DIR$/sampleapp" />
+            <option value="$PROJECT_DIR$/ttLibrary" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
