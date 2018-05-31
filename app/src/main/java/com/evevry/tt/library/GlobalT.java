@@ -166,15 +166,6 @@ public class GlobalT {
         PushManager.createChannel(context);
 
         RealmManager.init(context);
-
-        if (GlobalT.getInstance().hasToShowLog()) {
-            Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
-                @Override
-                public void uncaughtException(Thread thread, Throwable e) {
-                    RealmManager.newInstance().writeLog("[TT] Exception: " + Log.getStackTraceString(e));
-                }
-            });
-        }
     }
 
     public static GlobalT with(Context context) {
