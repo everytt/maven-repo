@@ -1,4 +1,4 @@
-package com.evevry.tt.ttsample;
+package com.evevry.tt.library;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

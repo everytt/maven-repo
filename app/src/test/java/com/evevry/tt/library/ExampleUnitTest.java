@@ -1,4 +1,4 @@
-package com.evevry.tt.ttsample;
+package com.evevry.tt.library;
 
 import org.junit.Test;
 
