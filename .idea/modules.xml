@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libGlobalTT_v0.1.0/libGlobalTT_v0.1.0.iml" filepath="$PROJECT_DIR$/libGlobalTT_v0.1.0/libGlobalTT_v0.1.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample.iml" filepath="$PROJECT_DIR$/sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sampleapp/sampleapp.iml" filepath="$PROJECT_DIR$/sampleapp/sampleapp.iml" />
     </modules>
   </component>
 </project>

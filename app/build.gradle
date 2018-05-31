@@ -12,7 +12,6 @@ android {
         targetSdkVersion 27
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
     }
 
     buildTypes {
@@ -37,13 +36,9 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'me.everything:providers-android:1.0.1'
     implementation 'com.github.bumptech.glide:glide:4.3.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.koushikdutta.async:androidasync:2.1.9'
     implementation 'de.hdodenhof:circleimageview:2.1.0'
     implementation 'com.facebook.android:facebook-android-sdk:4.26.0'
     implementation 'com.github.delight-im:Android-AdvancedWebView:v3.0.0'
-}
-
-fileTree(dir: 'libs', include: '*.aar').each {
-    File file -> dependencies.add("implementation", files('libs/' + file.name))
+    implementation project(':libGlobalTT_v0.1.0')
 }
